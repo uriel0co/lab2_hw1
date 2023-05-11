@@ -16,10 +16,7 @@ from scipy.stats import uniform as sp_uniform
 
 
 
-df = pd.read_csv("prediction.csv").iloc[:,1:]
-df.to_csv("prediction.csv", index=False)
-a=0
-####################
+########
 def load_data(path):
     print(f'_{path.split("/")[1]}')
     files = os.listdir(path)
@@ -251,23 +248,23 @@ def preprocessing(df):
 
 
 def main():
-    # read train data
-    #path_train = 'data/train'
-    #load_data(path_train)
+    #read train data
+    path_train = 'data/train'
+    load_data(path_train)
 
-    # read test data
-    #path_test = 'data/test'
-    #load_data(path_test)
+    #read test data
+    path_test = 'data/test'
+    load_data(path_test)
 
-    # preProcessing
+    #preProcessing
 
-    # df_train = pd.read_csv("/home/student/094295_hw1/patient_df_train_1.csv")
-    # df_test = pd.read_csv("/home/student/094295_hw1/patient_df_test_1.csv")
-    # train_data = preprocessing(df_train)
-    # test_data = preprocessing(df_test)
-    # train_data.to_csv('/home/student/094295_hw1/train_processed.csv')
-    # test_data.to_csv('/home/student/094295_hw1/test_processed.csv')
-    # print("finished pre-processing")
+    df_train = pd.read_csv("/home/student/094295_hw1/patient_df_train_1.csv")
+    df_test = pd.read_csv("/home/student/094295_hw1/patient_df_test_1.csv")
+    train_data = preprocessing(df_train)
+    test_data = preprocessing(df_test)
+    train_data.to_csv('/home/student/094295_hw1/train_processed.csv')
+    test_data.to_csv('/home/student/094295_hw1/test_processed.csv')
+    print("finished pre-processing")
 
     train_processed = pd.read_csv("/home/student/094295_hw1/train_processed_thresh_0.75.csv")
     test_processed = pd.read_csv("/home/student/094295_hw1/test_processed_thresh_0.75.csv")
