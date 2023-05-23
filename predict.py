@@ -13,7 +13,6 @@ import pickle
 import sys
 
 def load_data(path):
-    print(f'_{path.split("/")[1]}')
     files = os.listdir(path)
     to_csv = []
     for file in range(0, len(files)):
